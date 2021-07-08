@@ -13,7 +13,7 @@ $ npm install
 $ cd ../server
 $ npm install
 # Setting up the environment variables
-$ mv .env.example .env
+$ cp .env.example .env
 # Then change the variables in the .env file
 # Running the client or server
 $ npm run dev
