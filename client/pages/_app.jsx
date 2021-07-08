@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 
-import "bootstrap/dist/css/bootstrap.css";
+import "tailwindcss/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
 
