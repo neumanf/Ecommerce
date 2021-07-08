@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Admin() {
     return (
         <div className="container">
-            <h1>Homepage</h1>
+            <h1>Página de admin</h1>
         </div>
     );
 }
