@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ToastContainer } from "react-toastify";
+import { Slide, ToastContainer } from "react-toastify";
 
 import "tailwindcss/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,7 +21,11 @@ function MyApp({ Component, pageProps }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <ToastContainer position="bottom-right" />
+            <ToastContainer
+                position="bottom-right"
+                autoClose={4000}
+                transition={Slide}
+            />
             <Component {...pageProps} />
         </>
     );
