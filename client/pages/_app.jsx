@@ -5,6 +5,8 @@ import "tailwindcss/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
 
+import Header from "../components/Header/header";
+
 function MyApp({ Component, pageProps }) {
     return (
         <>
@@ -18,6 +20,10 @@ function MyApp({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <link
+                    rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -26,7 +32,12 @@ function MyApp({ Component, pageProps }) {
                 autoClose={4000}
                 transition={Slide}
             />
-            <Component {...pageProps} />
+            <div className="h-screen">
+                <Header />
+                <div className="bg-purpled-light h-full">
+                    <Component {...pageProps} />
+                </div>
+            </div>
         </>
     );
 }

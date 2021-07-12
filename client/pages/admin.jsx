@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import Link from "next/link";
 
 export default function Admin() {
     const [title, setTitle] = useState("");
@@ -39,23 +38,17 @@ export default function Admin() {
     };
 
     return (
-        <div className="h-screen bg-indigo-50">
-            <div className="flex flex-col container py-6 h-screen">
-                <Link href="/">
-                    <h1 className="font-bold mb-6">Ecommerce</h1>
-                </Link>
-
+        <div>
+            <div className="flex flex-col container py-6 h-full">
+                <h1 className="text-2xl font-bold mb-4">Adicione um produto</h1>
                 <form
                     action="#"
                     method="POST"
-                    className="flex flex-1 justify-center items-center"
+                    className="flex flex-1 mt-20 justify-center items-center"
                     onSubmit={addProduct}
                 >
                     <div className="shadow overflow-hidden sm:rounded-md w-2/3">
                         <div className="px-4 py-5 bg-white sm:p-6">
-                            <h1 className="text-2xl font-bold mb-4">
-                                Adicione um produto
-                            </h1>
                             <div className="grid grid-cols-6 gap-6">
                                 <div className="col-span-6 sm:col-span-6">
                                     <label
@@ -160,7 +153,7 @@ export default function Admin() {
                         <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <button
                                 type="submit"
-                                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellowish hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellowish"
                             >
                                 Adicionar
                             </button>

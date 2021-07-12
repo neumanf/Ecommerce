@@ -8,7 +8,17 @@ module.exports = {
         container: {
             center: true,
         },
-        extend: {},
+        extend: {
+            colors: {
+                purpled: {
+                    light: "#F2F5FF",
+                    DEFAULT: "#67597A",
+                },
+                yellowish: {
+                    DEFAULT: "#FFD23F",
+                },
+            },
+        },
     },
     variants: {
         extend: {},
