@@ -1,7 +1,11 @@
-export default function Home() {
+import { observer } from "mobx-react";
+
+function Home() {
     return (
         <div className="container">
             <h1>Homepage</h1>
         </div>
     );
 }
+
+export default observer(Home);

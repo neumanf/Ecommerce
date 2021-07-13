@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export default function Admin() {
+function Admin() {
     const [title, setTitle] = useState("");
     const [image_url, setImageURL] = useState("");
     const [price, setPrice] = useState("");
@@ -67,7 +67,7 @@ export default function Admin() {
                                         required
                                         min="1"
                                         max="64"
-                                        className="px-4 py-2 mt-1 focus:outline-none border border-gray-50  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                        className="px-4 py-2 mt-1 focus:outline-none border  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                     />
                                 </div>
 
@@ -87,7 +87,7 @@ export default function Admin() {
                                         }
                                         required
                                         pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
-                                        className="px-4 py-2 mt-1 focus:outline-none border border-gray-50 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                        className="px-4 py-2 mt-1 focus:outline-none border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                         placeholder="https://website.com/image.png"
                                     />
                                 </div>
@@ -100,7 +100,7 @@ export default function Admin() {
                                         Preço
                                     </label>
                                     <div className="mt-1 flex rounded-md shadow-sm">
-                                        <span className="px-4 py-2 inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                                        <span className="px-4 py-2 inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                                             R$
                                         </span>
                                         <input
@@ -114,7 +114,7 @@ export default function Admin() {
                                             min="1"
                                             max="20"
                                             pattern="^\d+,\d+$"
-                                            className="px-4 py-2 focus:outline-none border border-gray-50 focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                                            className="px-4 py-2 focus:outline-none border focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                                             placeholder="00,00"
                                         />
                                     </div>
@@ -164,3 +164,5 @@ export default function Admin() {
         </div>
     );
 }
+
+export default Admin;
