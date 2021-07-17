@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
             />
             <div className="h-screen">
                 <Header />
-                <div className="bg-purpled-light h-full">
+                <div className="bg-purpled-light min-h-full">
                     <Component {...pageProps} />
                 </div>
             </div>

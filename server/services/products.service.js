@@ -25,7 +25,17 @@ const addProductToDB = async (_product) => {
     }
 };
 
+const deleteProductFromDB = async (id) => {
+    try {
+        return await Product.deleteOne({ _id: id });
+    } catch (e) {
+        console.error(e);
+        return e.name;
+    }
+};
+
 module.exports = {
     getProductsFromDB,
     addProductToDB,
+    deleteProductFromDB,
 };

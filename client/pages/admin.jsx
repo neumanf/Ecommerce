@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 function Admin() {
@@ -7,6 +7,9 @@ function Admin() {
     const [image_url, setImageURL] = useState("");
     const [price, setPrice] = useState("");
     const [category, setCategory] = useState("");
+
+    const [products, setProducts] = useState({});
+    const [productsChanged, setProductsChange] = useState(false);
 
     const addProduct = async (e) => {
         e.preventDefault();
@@ -25,29 +28,57 @@ function Admin() {
                 category,
             });
 
-            console.log(data);
-
-            if (data && !data.error) {
+            if (data && data.ok) {
                 toast.success("Produto adicionado com sucesso!");
             } else {
                 toast.error(`Erro: ${data.error}`);
             }
+
+            setProductsChange(!productsChanged);
         } catch (e) {
             console.error(e);
         }
     };
 
+    const deleteProduct = async (id) => {
+        try {
+            const { data } = await axios.delete("/api/products", {
+                data: { id },
+            });
+
+            if (data && data.ok) {
+                toast.success("Produto deletado com sucesso!");
+            } else {
+                toast.error(`Erro: ${data.error}`);
+            }
+
+            setProductsChange(!productsChanged);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    useEffect(async () => {
+        try {
+            const { data } = await axios.get("/api/products");
+
+            setProducts(data);
+        } catch (e) {
+            console.error(e);
+        }
+    }, [productsChanged]);
+
     return (
         <div>
-            <div className="flex flex-col container py-6 h-full">
-                <h1 className="text-2xl font-bold mb-4">Adicione um produto</h1>
+            <div className="flex flex-col container py-6 h-full justify-center">
+                <h1 className="text-2xl font-bold my-8">Adicione um produto</h1>
                 <form
                     action="#"
                     method="POST"
-                    className="flex flex-1 mt-20 justify-center items-center"
+                    className="flex flex-1 justify-center items-center"
                     onSubmit={addProduct}
                 >
-                    <div className="shadow overflow-hidden sm:rounded-md w-2/3">
+                    <div className="w-full shadow overflow-hidden sm:rounded-md w-2/3">
                         <div className="px-4 py-5 bg-white sm:p-6">
                             <div className="grid grid-cols-6 gap-6">
                                 <div className="col-span-6 sm:col-span-6">
@@ -160,6 +191,50 @@ function Admin() {
                         </div>
                     </div>
                 </form>
+                <h1 className="text-2xl font-bold my-8">Remova um produto</h1>
+                <div className="flex">
+                    <div className="grid grid-cols-2 ml-6 flex-auto">
+                        {Object.entries(products).length !== 0 ? (
+                            products.map((product) => (
+                                <div
+                                    key={product._id}
+                                    className="flex justify-center ml-6 flex-auto"
+                                >
+                                    <div className="flex justify-between items-center rounded-lg px-6 py-4 m-8 w-5/6 h-32 bg-white">
+                                        <div className="flex items-center">
+                                            <img
+                                                className="w-24"
+                                                src={product.image_url}
+                                                alt=""
+                                            />
+                                            <div className="flex flex-col pl-4">
+                                                <h1 className="text-purpled overflow-ellipsis overflow-hidden">
+                                                    {product.title}
+                                                </h1>
+                                                <p className="text-yellowish">
+                                                    {product.categories[0]}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <button
+                                            onClick={() =>
+                                                deleteProduct(product._id)
+                                            }
+                                        >
+                                            <div className="flex cursor-pointer rounded-full w-10 h-10 bg-red-500 justify-center items-center p-2 mx-4">
+                                                <i className="fa fa-trash text-white" />
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div>
+                                <p>Loading...</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
     );
