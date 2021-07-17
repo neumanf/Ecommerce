@@ -78,7 +78,7 @@ function Admin() {
                     className="flex flex-1 justify-center items-center"
                     onSubmit={addProduct}
                 >
-                    <div className="w-full shadow overflow-hidden sm:rounded-md w-2/3">
+                    <div className="w-full shadow overflow-hidden sm:rounded-md">
                         <div className="px-4 py-5 bg-white sm:p-6">
                             <div className="grid grid-cols-6 gap-6">
                                 <div className="col-span-6 sm:col-span-6">
