@@ -4,8 +4,7 @@ const getProductsFromDB = async () => {
     try {
         return await Product.find({}).exec();
     } catch (e) {
-        console.error(e);
-        return e.name;
+        return { error: e.name };
     }
 };
 
@@ -20,8 +19,7 @@ const addProductToDB = async (_product) => {
 
         return await product.save();
     } catch (e) {
-        console.error(e);
-        return e.name;
+        return { error: e.name };
     }
 };
 
@@ -29,8 +27,7 @@ const deleteProductFromDB = async (id) => {
     try {
         return await Product.deleteOne({ _id: id });
     } catch (e) {
-        console.error(e);
-        return e.name;
+        return { error: e.name };
     }
 };
 
