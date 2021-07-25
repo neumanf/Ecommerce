@@ -1,108 +1,97 @@
-
-
-.principal{
-    display:flex ;
+.principal {
+    display: flex;
     margin-top: 40px;
-    margin-left: 15%;
-    
 }
-.lista-produto{
+.lista-produto {
     flex: 1;
-    
-    
+    display: flex;
+    flex-direction: column;
 }
-.compras-dados{
+.compras-dados {
     flex: 2;
-    
-    margin-left: 48%;
+
+    margin-left: 10em;
 }
 
-
-
-img{
-    width: 90px;
-    height: 90px;
+.produto {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    width: 80%;
 }
-
-.produto{
-display: flex;
-background-color: white;
-border-radius: 10px;
-width: 235%;
-}
-.imagem-produto{
-    flex: 1;
+.imagem-produto {
     padding-left: 3%;
     padding-top: 1%;
-    
-    
-    
+    width: 10em;
 }
-.descricao-produto{
-    
+.descricao-produto {
     flex: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding: 18px;
-    padding-left: 0;
-    
+    padding-left: 1em;
 }
-#produto-titulo{
+.produto-titulo {
     padding-left: 0px;
 }
-#produto-preco{
+.produto-preco {
     padding-top: 3px;
+    font-weight: bold;
 }
 
+.quantidade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.quantidade{
-    flex: 1;
     padding-top: 5px;
     padding-right: 8%;
 }
-.quantidade-box{
+.quantidade-box {
     background-color: rgb(255, 210, 65);
     margin-top: 3px;
     width: 67px;
     height: 39px;
     border-radius: 3px;
-    margin-left: 48%;
     display: flex;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
     color: white;
     font-weight: bold;
 }
-.quantidade-text{
-    margin-left: 33%; 
-    padding-top: 5%;  
-    color: rgb(168, 164, 179); 
+.quantidade-text {
+    padding-top: 5%;
+    color: rgb(168, 164, 179);
 }
 
-.cep-input{
+.cep-input {
     margin-top: 10px;
     border: none;
     border-radius: 10px;
     width: 118px;
-    height: 31px;
-    text-align:center;
+    height: 40px;
+    text-align: center;
 }
 
-.total{
+.total {
     margin-top: 15px;
-
 }
 
-.valor-total{
+.valor-total {
     margin-top: 5px;
 }
-.finalizar{
+.finalizar {
     margin-top: 15px;
 }
-.button-finalizar{
+.button-finalizar {
     border: none;
-    background-color:rgb(255, 210, 65); 
+    background-color: rgb(255, 210, 65);
     color: white;
-    width: 50%;
-    height: 29px;
-    border-radius: 5px;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 10px;
     font-weight: bold;
 }
