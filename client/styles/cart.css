@@ -1,0 +1,108 @@
+
+
+.principal{
+    display:flex ;
+    margin-top: 40px;
+    margin-left: 15%;
+    
+}
+.lista-produto{
+    flex: 1;
+    
+    
+}
+.compras-dados{
+    flex: 2;
+    
+    margin-left: 48%;
+}
+
+
+
+img{
+    width: 90px;
+    height: 90px;
+}
+
+.produto{
+display: flex;
+background-color: white;
+border-radius: 10px;
+width: 235%;
+}
+.imagem-produto{
+    flex: 1;
+    padding-left: 3%;
+    padding-top: 1%;
+    
+    
+    
+}
+.descricao-produto{
+    
+    flex: 2;
+    padding: 18px;
+    padding-left: 0;
+    
+}
+#produto-titulo{
+    padding-left: 0px;
+}
+#produto-preco{
+    padding-top: 3px;
+}
+
+
+.quantidade{
+    flex: 1;
+    padding-top: 5px;
+    padding-right: 8%;
+}
+.quantidade-box{
+    background-color: rgb(255, 210, 65);
+    margin-top: 3px;
+    width: 67px;
+    height: 39px;
+    border-radius: 3px;
+    margin-left: 48%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    color: white;
+    font-weight: bold;
+}
+.quantidade-text{
+    margin-left: 33%; 
+    padding-top: 5%;  
+    color: rgb(168, 164, 179); 
+}
+
+.cep-input{
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 118px;
+    height: 31px;
+    text-align:center;
+}
+
+.total{
+    margin-top: 15px;
+
+}
+
+.valor-total{
+    margin-top: 5px;
+}
+.finalizar{
+    margin-top: 15px;
+}
+.button-finalizar{
+    border: none;
+    background-color:rgb(255, 210, 65); 
+    color: white;
+    width: 50%;
+    height: 29px;
+    border-radius: 5px;
+    font-weight: bold;
+}

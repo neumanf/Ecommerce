@@ -4,7 +4,7 @@ import { Slide, ToastContainer } from "react-toastify";
 import "tailwindcss/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
-
+import "../styles/cart.css";
 import Header from "../components/Header/header";
 
 function MyApp({ Component, pageProps }) {
