@@ -40,7 +40,7 @@ function Home() {
     }, []);
 
     return (
-        <div className="container h-screen flex flex-col">
+        <div className="container h-full flex flex-col">
             <div className="flex">
                 <div className="flex flex-col mx-10 ">
                     <div className="w-48 my-10 ">

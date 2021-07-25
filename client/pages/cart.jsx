@@ -43,44 +43,31 @@ function Cart() {
         <div className="container py-10">
             <h1 className="text-2xl font-bold">Carrinho</h1>
 
-            <button onClick={() => console.log(quantities)}>quantities</button>
-
             <div className="principal">
                 <div className="lista-produtos">
                     {Object.entries(cartStore.cart).length !== 0 ? (
                         cartStore.cart.map((product) => (
-                            <div className="produto">
+                            <div key={product._id} className="produto">
                                 <div className="imagem-produto">
-                                    <img
-                                        src={product.image_url}
-                                        alt="produto selecionado"
-                                    />
+                                    <img src={product.image_url} alt="produto selecionado" />
                                 </div>
                                 <div className="descricao-produto">
-                                    <h4 className="produto-titulo text-purpled">
-                                        {product.title}
-                                    </h4>
+                                    <h4 className="produto-titulo text-purpled">{product.title}</h4>
                                     <p className="produto-preco text-purpled">
-                                        <span className="text-gray-400 mr-2 font-medium">
-                                            Preço
-                                        </span>
+                                        <span className="text-gray-400 mr-2 font-medium">Preço</span>
                                         R$ {product.price}
                                     </p>
                                 </div>
                                 <div className="quantidade">
-                                    <div className="quantidade-text">
-                                        Quantidade
-                                    </div>
+                                    <div className="quantidade-text">Quantidade</div>
                                     <div className="quantidade-box">
                                         <input
                                             type="number"
                                             name={product._id}
-                                            class="w-32 rounded outline-none text-center text-purpled"
+                                            className="w-32 rounded outline-none text-center text-purpled"
                                             defaultValue="1"
                                             min="1"
-                                            onChange={(e) =>
-                                                handleChange(e, product.price)
-                                            }
+                                            onChange={(e) => handleChange(e, product.price)}
                                         />
                                     </div>
                                 </div>
@@ -96,22 +83,14 @@ function Cart() {
                 <div className="compras-dados">
                     <div className="cep">
                         <div className="text-cep">CEP</div>
-                        <input
-                            className="cep-input"
-                            placeholder="00000-000"
-                            type="text"
-                        />
+                        <input className="cep-input" placeholder="00000-000" type="text" />
                     </div>
                     <div className="total">
                         <div className="text-total">Total</div>
                         <div className="valor-total">R$ {total}</div>
                     </div>
                     <div className="finalizar">
-                        <button
-                            type="button"
-                            className="button-finalizar"
-                            onClick={() => toast.success("Compra finalizada")}
-                        >
+                        <button type="button" className="button-finalizar" onClick={() => toast.success("Compra finalizada")}>
                             {" "}
                             Finalizar Compra{" "}
                         </button>

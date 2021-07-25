@@ -1,15 +1,13 @@
 .principal {
     display: flex;
+    justify-content: space-between;
     margin-top: 40px;
 }
 .lista-produto {
-    flex: 1;
     display: flex;
     flex-direction: column;
 }
 .compras-dados {
-    flex: 2;
-
     margin-left: 10em;
 }
 
@@ -90,7 +88,7 @@
     border: none;
     background-color: rgb(255, 210, 65);
     color: white;
-    width: 100%;
+    width: 15em;
     height: 2.5em;
     border-radius: 10px;
     font-weight: bold;
